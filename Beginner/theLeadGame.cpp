@@ -5,25 +5,23 @@ int main()
 {
     int t;
     cin >> t;
-    int player1, player2, lead = 0, i = 0, leader;
-    long int allLead = 0;
-    while (i++ < t)
+    int lead = 0, leader = 1, temp1 = 0, temp2 = 0;
+    while (t--)
     {
+        int player1, player2;
         cin >> player1 >> player2;
-        leader = 1; //assuming player 1 is leader
-        lead = player1 > player2 ? player1 - player2 : player2 - player1;
-        if (lead > allLead)
+        temp1 += player1;
+        temp2 += player2;
+        if ((temp1 - temp2) > lead)
         {
-            allLead = lead;
-            if (player1 > player2)
-            {
-                leader = 1;
-            }
-            else
-            {
-                leader = 2;
-            }
+            lead = temp1 - temp2;
+            leader = 1;
+        }
+        else if ((temp2 - temp1) > lead)
+        {
+            lead = temp2 - temp1;
+            leader = 2;
         }
     }
-    cout << leader << " " << allLead;
+    cout << leader << " " << lead;
 }
