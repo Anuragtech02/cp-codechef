@@ -12,7 +12,7 @@ int main()
         cin >> str;
         for (int i = 0; i < str.length();)
         {
-            if (str[i] != str[i + 1])
+            if (str[i] == 'x' && str[i + 1] == 'y' || str[i] == 'y' && str[i + 1] == 'x')
             {
                 count++;
                 i += 2;
