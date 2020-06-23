@@ -7,15 +7,19 @@ int main()
     cin >> t;
     while (t--)
     {
-        int N, B, M, cache_size = 0, count = 0, found = 0;
+        int N, B, M, count = 0, available = -1;
         cin >> N >> B >> M;
-        cache_size = B;
-        int cache[B], arr[M];
-        for (int i = 0; i < M; i++)
-            cin >> arr[M];
-        for (int i = 0; i < cache_size; i++)
+        for (int i = 0; i < M; ++i)
         {
-            cache[i] = arr[i];
+            int a;
+            cin >> a;
+            if (a / B != available)
+            {
+                count++;
+                available = a / B;
+            }
         }
+        cout << count << "\n";
     }
+    return 0;
 }
