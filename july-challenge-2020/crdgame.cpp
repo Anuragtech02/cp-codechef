@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int digitSum(long int a)
+long int digitSum(long int a)
 {
-    int sum = 0;
+    long int sum = 0;
     while (a > 0)
     {
         sum += a % 10;
@@ -22,8 +22,7 @@ int main()
         cin >> rounds;
         while (rounds--)
         {
-            long int a, b;
-            int digitA = 0, digitB = 0;
+            long int a, b, digitA = 0, digitB = 0;
             cin >> a >> b;
             digitA = digitSum(a);
             digitB = digitSum(b);
@@ -31,17 +30,17 @@ int main()
                 sumA++;
             else if (digitB > digitA)
                 sumB++;
-            else
+            else if (digitA == digitB)
             {
                 sumA++;
                 sumB++;
             }
         }
         if (sumA > sumB)
-            cout << "\n0 " << sumA;
+            cout << "0 " << sumA << "\n";
         else if (sumB > sumA)
-            cout << "\n1 " << sumB;
+            cout << "1 " << sumB << "\n";
         else
-            cout << "\n2 " << sumA;
+            cout << "2 " << sumA << "\n";
     }
 }
