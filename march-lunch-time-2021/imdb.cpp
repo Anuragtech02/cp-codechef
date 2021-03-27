@@ -10,7 +10,7 @@ int main()
         int n, x;
         cin >> n >> x;
         long int max = 0;
-        for (int i = 0; i < n; i++)
+        for (long int i = 0; i < n; i++)
         {
             long int s, r;
             cin >> s >> r;
